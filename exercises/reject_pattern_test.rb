@@ -17,16 +17,21 @@ class RejectPatternTest < Minitest::Test
     letters = ["a", "l", "l", " ", "y", "o", "u", "r", " ", "b", "a", "s", "e", " ", "a", "r", "e", " ", "b", "e", "l", "o", "n", "g", " ", "t", "o", " ", "u", "s"]
     remaining = []
     letters.each do |letter|
-      # Your code goes here
+      remaining << letter.delete('aeiouy')
     end
+    remaining.delete('')
     assert_equal ["l", "l", " ", "r", " ", "b", "s", " ", "r", " ", "b", "l", "n", "g", " ", "t", " ", "s"], remaining
   end
 
   def test_remove_numbers_divisible_by_3
-    skip
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     remaining = []
-    # Your code goes here
+    numbers.each do |num|
+      if (num % 3).zero?
+      else
+        remaining << num
+      end
+    end
     assert_equal [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20], remaining
   end
 

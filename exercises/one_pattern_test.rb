@@ -18,14 +18,14 @@ class OnePatternTest < Minitest::Test
     ornaments = ["bracelet", "anklet", "earring"]
     count = 0
     ornaments.each do |ornament|
-      # Your code goes here
+      count += 1 if ornament == 'ring'
     end
     exactly_one_ring = count == 1
     refute exactly_one_ring
   end
 
   def test_not_just_one_ring
-    skip
+    
     ornaments = ["bracelet", "ring", "ring", "anklet", "earring"]
     count = 0
     # Your code goes here
